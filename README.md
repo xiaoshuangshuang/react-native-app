@@ -1,4 +1,4 @@
-# react-native开发中遇见的问题以及解决方案
+# react-native
 ### 1. 常见的造成react native闪退的原因   
   * lineHeight不是整数，造成ios闪退。使用Math.round将lineHeight转换为整数   
   * 点击数字时，会发生闪退 -- 将数字转换为字符串 String(num)   
