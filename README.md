@@ -103,5 +103,8 @@
     } catch(e) {    
      this.setState({ content: e.message });   
     }    
-   }   
-   ```
+   }    
+  ```    
+### 7. navigator同级目录只记录两级    
+### 8. ios上listView 或scrollView 的属性removeClippedSubviews设置为true，render的时候，listView或scrollView不显示，需要碰/滑一下才会显示。    
+   解决方案： ios上设置removeClippedSubviews为false    
