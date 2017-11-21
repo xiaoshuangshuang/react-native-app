@@ -18,5 +18,24 @@
       ```
     b. 子组件向父组件传递信息
       通常情况下，可使用事件触发。   
-      也可以采用通过触发父组件通过props传递的方法    
-3. 
+      也可以采用通过触发父组件通过props传递的方法   
+3. 当页面上有键盘时，当点击TouchableHighlight,第一次会收起键盘而不会触发方法（scrollview)    
+   解决方案1:设置scrollView的keyboardShouldPersistTaps为handled,当触发其他操作前先关闭键盘   
+   ``` react native    
+   <ScrollView keyboardShouldPersistTaps="handled">   
+     <TouchableHighlight onPress={()=>keybord.dismiss()}>    
+     </TouchableHighlight>    
+    </ScrollView>   
+    ```   
+    解决方案2:   
+    ``` react native   
+    <View onStartShouldSetResponderCapture={this._onStartShouldSetResponderCapture.bind(this)}>   
+     <TextInput ref="searchButton"/>   
+    </View>   
+    _onStartShouldSetResponderCapture(){   
+     const target = e.nativeEvent.target;   
+     this.refs.searchButton.blur();   
+    }   
+    ```
+  
+    
