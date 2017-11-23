@@ -84,7 +84,8 @@
     return RNViewShot.takeSnapshot(view, options);     
    }    
    export default { takeSnapshot, dirs };    
-   ```    
+   ```      
+   注意：当需要生成的内容被scrollview包裹时，而scrollView设置flex:1时，可能会造成截屏的效果。
 ### 5. navigator动画卡顿
    解决方案:当页面切换动画完成后再获取数据并渲染    
    ``` react native    
